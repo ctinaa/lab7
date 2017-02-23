@@ -19,7 +19,10 @@
 		</div>
 
 		<h4>Projects</h4>
-		{{#each projects}}
+		{{#if min}} 
+				hey
+		{{else}}		
+				{{#each projects}}
 			<div class="project" id="{{id}}">
 				<div class="thumbnail">
 					<a href="/project/{{id}}">
@@ -27,10 +30,15 @@
 						<h4>{{title}}</h4>
 					</a>
 					<div class="likeCtr"><button class="btn btn-default likeBtn">Like</button></div>
+					<button class ="likeBtn"> Like </button>
+					
+						
+					
 					<div class="details"></div>
 				</div>
 			</div>
-		{{/each}}
+		{{/each}}	
+		{{/if}}
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -44,6 +52,7 @@
 
 	  ga('create', 'UA-92569320-1', 'auto');
 	  ga('send', 'pageview');
+	  ga("send", "event", 'like', 'click');
 
 	</script>
 </body>
